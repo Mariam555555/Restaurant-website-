@@ -36,9 +36,10 @@ A modern, responsive Front-End Restaurant Website built with a clean UI/UX desig
 <img width="1518" height="976" alt="Screenshot 2026-07-15 010946" src="https://github.com/user-attachments/assets/17f81e40-95cb-4474-aa5c-9cb1cd0e4164" />
 
 **detailed page**
+
 <img width="1871" height="957" alt="Screenshot 2026-07-15 011024" src="https://github.com/user-attachments/assets/d0c2310c-ffaa-4010-ab01-8e62ec5d8437" />
 <img width="1887" height="910" alt="Screenshot 2026-07-15 011044" src="https://github.com/user-attachments/assets/ee446243-370e-4dd9-894e-c5d642a869c0" />
-<img width="1887" height="910" alt="Screenshot 2026-07-15 011044" src="https://github.com/user-attachments/assets/b1d0a3b6-5d00-416f-88ca-f255bc2d7a48" />
+<img width="1867" height="942" alt="Screenshot 2026-07-15 011105" src="https://github.com/user-attachments/assets/d2fab4a6-9277-441f-809c-14b291547134" />
 
 # 8. forget password page
 *A simple, intuitive, and centered layout for account recovery, featuring a highly focused design.*
