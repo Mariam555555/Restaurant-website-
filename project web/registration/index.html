@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <video autoplay muted loop class="bg-video">
+        <source src="https://videos.pexels.com/video-files/2620043/2620043-sd_640_360_25fps.mp4" type="video/mp4">
+        type="video/mp4">
+    </video>
+
+    <div id="movingWord"> Welcome to our website! </div>
+    <div class="register-container">
+        <div class="register">
+            <h1>Create a New Account</h1>
+             <form id="registerForm">
+                <div class="Name">
+                    <label> Full Name :
+                        <div class="box1">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" id="emailFullName" placeholder="Enter your Full Name" required>
+                        </div>
+                    </label>
+                </div>
+                <div class="email">
+                    <label>Email Address :
+                        <div class="box2">
+                            <i class='bx bxs-envelope'></i>
+                            <input type="email" id="emailInput" placeholder=" Enter your Email Address" required>
+                            <span id="emailError" style="color:red;"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="password">
+                    <label>Password :
+                        <div class="box3">
+                            <i class='bx bxs-lock'></i>
+                            <input type="password" id="password" placeholder=" Enter your Password" required>
+                          
+                        </div>
+                    </label>
+                </div>
+                <div class="ConfirmPassword">
+                    <label>Confirm Password :
+                        <div class="box4">
+                            <i class='bx bxs-check-shield'></i>
+                            <input type="password" id="confirmPassword" placeholder=" Confirm Password" required>
+                            <span id="passwordMatchMessage" style="color:red;"></span>
+                        </div>
+                    </label>
+                </div>
+
+                <div id="toast" style="display:none; position:fixed; bottom:20px; right:20px; background:#333; color:#fff; padding:10px; border-radius:5px;"></div>
+                <div class="gender">
+                    <p>Gender :</p>
+                    <label>
+                        <input type="radio" name="gender" value="Male">
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Female">
+                        Female
+                    </label>
+                </div>
+                <div> <button type="submit"   id="animatedBtn" style="transition: transform 0.3s;"   >     <a
+                            href="../home-page/home/index.html">Register</a></button>
+                </div>
+                <div class="link-login">
+                    <p>Already have an account? <a
+                            href="../login/index.html">Login
+                            here</a></p>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+  <script src="./js/main.js"></script>
+</body>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+       
+        const email = document.getElementById('emailInput').value;
+        const pass = document.getElementById('password').value;
+        const confirmPass = document.getElementById('confirmPassword').value;
+        const matchMessage = document.getElementById('passwordMatchMessage');
+
+        
+        if (pass !== confirmPass) {
+            matchMessage.textContent = "Passwords do not match!";
+            return; 
+        } else {
+            matchMessage.textContent = ""; 
+        }
+
+        
+        localStorage.setItem('dbEmail', email);
+        localStorage.setItem('dbPassword', pass);
+
+       
+        alert("Registration Successful! Please login.");
+        
+     
+        window.location.href = '../login/index.html'; 
+    });
+</script>
+</html>

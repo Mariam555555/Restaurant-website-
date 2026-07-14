@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+
+        <video autoplay muted loop class="bg-video">
+            <source
+                src="https://media.istockphoto.com/id/1340761090/video/chefs-sous-chefs-and-kitchen-staff-working-at-their-stations-in-a-gourmet-restaurant.mp4?s=mp4-640x640-is&k=20&c=5vnFI7XNC0hPGRA0QFNp1ArvxFLYOlqf7UqOgSAMoEs="
+                type="video/mp4">
+        </video>
+
+        <div class="login-container">
+            <div class="login">
+                <h1>Welcome Back!</h1>
+                <form id="loginForm">
+                    <div class="email">
+                        <label> Email Address :
+                        <div class="box1">
+                            <i class='bx bxs-envelope'></i>
+                            <input type="email" id="emailInput" placeholder=" Enter your Email Address" required>
+                        </div> </label>
+                        </div>
+                    <div class="password">
+                        <label>Password :
+                        <div class="box2">
+                            <i class='bx bxs-lock'></i>
+                            <input type="passWord" id="password"  placeholder=" Enter your Password" required> <br>
+                            <span id="passwordError" style="color:red;"></span>
+
+                        </div></label>
+                        </div>
+                    <div>
+                        <button type="submit" id="animatedBtn" style="transition: transform 0.3s;">login</button>
+                    </div>
+
+
+                    <div id="toast" style="display:none; position:fixed; bottom:20px; right:20px; background:#333; color:#fff; padding:10px; border-radius:5px;"></div>
+                </form>
+                <div class="link-forget">
+                    <div>
+                        <label class="remember">
+                            <input type="checkbox" id="rememberMe"/>
+                            Remember me
+                        </label>
+                    </div>
+                    <div class="link-forget"> 
+                     <p>forget password? <a
+                            href="../forget-password.html">
+                            click
+                            here now
+                            </a></p>
+                </div>
+                <div class="link-register">
+                    <p>Don't have an account? <a
+                            href="../registration/index.html">
+                            Registerate
+                </a></p>
+                </div>
+            </div>
+        </div>
+    <script src="./js/main.js"></script>
+</body>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        
+        const storedEmail = localStorage.getItem('dbEmail');
+        const storedPassword = localStorage.getItem('dbPassword');
+
+        
+        const inputEmail = document.getElementById('emailInput').value;
+        const inputPass = document.getElementById('password').value;
+        const errorMsg = document.getElementById('passwordError');
+        const rememberChecked = document.getElementById('rememberMe').checked;
+
+    
+        if (inputEmail === storedEmail && inputPass === storedPassword) {
+            
+            
+            if (rememberChecked) {
+                localStorage.setItem("savedEmail", inputEmail);
+            }
+
+            
+            window.location.href = '../home page/home/index.html';
+            
+        } else {
+            
+            errorMsg.innerHTML = 'Incorrect email or password! <br> <a href="../forget-password.html" style="color: blue; text-decoration: underline;">Click here to reset it</a>';
+        }
+    });
+
+    
+    window.onload = function() {
+        if (localStorage.getItem("savedEmail")) {
+            document.getElementById("emailInput").value = localStorage.getItem("savedEmail");
+            document.getElementById("rememberMe").checked = true;
+        }
+    }
+</script>
+</html>

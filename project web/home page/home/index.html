@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/code.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+<li><a href="../menu/index.html">Menu</a></li>
+<li><a href="../About-us/index.html">About Us</a></li>
+<li><a href="../contact us/index.html">Contact</a></li>
+<li><a href="../Detailed page/index.html">Detailed Page</a></li>
+        </ul>
+    </nav>
+        <h1 id="home">EELU Restaurant </h1> 
+
+        <div id="dateTime" style="text-align: center; font-size: 18px; margin: 20px 0;"></div>
+    
+        <div id="quoteSection" style="text-align: center; margin: 20px;">
+            <p id="quote" style="font-size: 18px; font-style: italic; color: #131212;">Click to discover a tasty thought!</p>
+            <button id="generateQuote" onclick="generateRandomQuote()" style="padding: 10px 20px; font-size: 16px; background-color: #083026; color: white; border: none; border-radius: 5px; cursor: pointer;">Generate Quote</button>
+        </div>
+
+        <section id="special-offers" class="special-offers">
+            <h2>Our Special Offers</h2>
+            <div class="offers-container">
+                <div class="offer-card">
+                    <img src="https://imgs.search.brave.com/0Ypic-w1ebeQr6lcuwdBfxjaSk0kW_A-5EL9EeC32pA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGlubmVyYXR0aGV6/b28uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE5LzA1L2dy/aWxsZWQtc2FsbW9u/LWZpbmFsLTMuanBn" alt="Offer 1">
+                    <h3>Grilled Salmon Combo</h3>
+                    <p>Enjoy a delicious grilled salmon with a side of veggies and a drink.</p>
+                    <p class="price">Only $19.99</p>
+                </div>
+                <div class="offer-card">
+                    <img src="https://imgs.search.brave.com/foAy6ZZ4gdFfvon2f_RWBxihuNkho1ri-hbQEAMrRT4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c291dGhlcm5saXZp/bmcuY29tL3RobWIv/YkNpTlNGV1R3Y3lv/dDBCbDUzZllWU0ZD/WDBFPS8xNTAweDAv/ZmlsdGVyczpub191/cHNjYWxlKCk6bWF4/X2J5dGVzKDE1MDAw/MCk6c3RyaXBfaWNj/KCkvMjU0MTkwMV9z/dW1tZV8wMDNfMF8x/XzAtNGU3YTc2ZjJl/MmFiNGFkMDkxMjQw/NjhjYTUyZTRhZjIt/YjBmODk2Yjc4MGRi/NDM4OWJjODhkZjA3/MDJlY2ZjODAuanBn" alt="Offer 2">
+                    <h3>Family Feast</h3>
+                    <p>A meal for the whole family with a variety of dishes to enjoy.</p>
+                    <p class="price">Only $49.99</p>
+                </div>
+                <div class="offer-card">
+                    <img src="https://imgs.search.brave.com/mVVoDQvCiV4XGaSUtxUvkHsnA1At9aLwNtGRBVa15nk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuZXBpY3VyaW91/cy5jb20vcGhvdG9z/LzYxOTJjZTAyNmU0/YmNhYTE0ZDM2NDA2/NC8xOjEvd18zMjAs/Y19saW1pdC9OYW5h/aW1vX1JFQ0lQRV8x/MTExMjFfMTgzOS5q/cGc" alt="Offer 3">
+                    <h3>Dessert Delight</h3>
+                    <p>Indulge in our special dessert platter with a variety of sweets.</p>
+                    <p class="price">Only $9.99</p>
+                </div>
+        
+                <div class="offer-card">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.XwcTsneYfLPSY4ovptFgEgHaLH%26pid%3DApi&f=1&ipt=fd08fba9b934e185973c3ddf4ac085673857ac5642243de5b5b12f695a46e1b5&ipo=images" alt="Offer 4">
+                    <h3>Vegan Delight</h3>
+                    <p>A healthy and delicious vegan meal with fresh ingredients.</p>
+                    <p class="price">Only $15.99</p>
+                </div>
+                <div class="offer-card">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.XzUnt5Afjbz_9Bmkng2IMQHaEK%26pid%3DApi&f=1&ipt=cb44ce91dde8c0eb97f771716a68f58489ee0cb75483c54c5ba9d245b0ee0d1f&ipo=images" alt="Offer 5">
+                    <h3>Pizza Party</h3>
+                    <p>A large pizza with your choice of toppings and a drink.</p>
+                    <p class="price">Only $12.99</p>
+                </div>
+                <div class="offer-card">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.B2nQasczYUYZ8ROWDowdDwHaFM%3Fpid%3DApi&f=1&ipt=0a4a5af18f04c04085de0f0cb2704be5548865a17b6acfb4454ac0a6aa41884c&ipo=images" alt="Offer 6">
+                    <h3>Breakfast Special</h3>
+                    <p>A hearty breakfast platter with eggs, bacon, and toast.</p>
+                    <p class="price">Only $8.99</p>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; 2025 EELU Restaurant. All rights reserved.</p>
+                
+            </div>
+        </footer>
+
+</body>
+</html>

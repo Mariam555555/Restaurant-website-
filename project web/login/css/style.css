@@ -1,0 +1,138 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* يخلي الفيديو ورا المحتوى */
+    object-fit: cover; /* عشان الفيديو يملأ الشاشة */
+  }
+  
+.login-container {
+    background-size: cover;
+    padding: 30px;
+}
+
+.login {
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 400px;
+    margin: 150px auto;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #aaa;
+    padding: 40px 80px;
+}
+.login h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(127, 49, 13);
+}
+.login label{
+    font-size: 18px;
+    /* font-weight: bold; */
+}
+.login input {
+    width: 90%;
+    margin: 20px 40p;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    height: 40px;
+padding-left: 40px;
+}
+.login .email{
+    position: relative;
+}
+.login .box1 i{
+    position: absolute;
+    padding-top: 12px;
+    right: 370px;
+}
+.login-container .form{
+    margin: auto;
+}
+::placeholder{
+    padding: 18px 1px;
+}
+.box1{
+    margin-top: 6px;
+}
+.password{
+    margin-top: 7px;
+}
+.box2{
+    margin-top: 6px
+}
+.login .password{
+    position: relative;
+}
+.login .box2 i{
+    position: absolute;
+    padding-top: 12px;
+    right: 370px;
+}
+.login button {
+    width: 100%;
+    /* padding: 12px; */
+    background-color: rgb(127, 49, 13);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    height: 40px;
+    /* cursor: pointer; */
+    margin-top: 10px;
+}
+
+.login button:hover {
+    background-color: rgb(180, 117, 88);
+}
+.login button a{
+    color: white;
+    text-decoration: none;
+}
+.link-forget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 15px;
+    padding: 0 10px;
+  }
+  .remember {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  font-size: medium;
+  }
+  .remember input[type="checkbox"] {
+    width: 18px;
+    height: 20px;
+  }
+
+  .link-forget a {
+    text-decoration: none;
+    color: rgb(127, 49, 13);
+    font-size: medium;
+  }
+  .link-forget a:hover {
+    color: rgb(180, 117, 88);
+  }
+.link-register {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.link-register a {
+    color: rgb(127, 49, 13);
+    text-decoration: none;
+}
+.link-register a:hover {
+    color: rgb(127, 49, 13);
+}

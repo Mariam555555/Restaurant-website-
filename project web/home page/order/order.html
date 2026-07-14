@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .order-container {
+            background: #ffffff;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .order-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .order-header h2 {
+            color: #2c1e16;
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .order-header p {
+            color: #888;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #444;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .input-group input, 
+        .input-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background: #fafafa;
+        }
+
+        .input-group input:focus, 
+        .input-group textarea:focus {
+            border-color: #d35400;
+            background: #ffffff;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(211, 84, 0, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(211, 84, 0, 0.3);
+        }
+
+        .back-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-top: 25px;
+            color: #999;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #d35400;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+            z-index: 999;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transform: scale(0.8);
+            transition: all 0.4s ease;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            max-width: 350px;
+            width: 90%;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+
+        .popup-content i {
+            font-size: 70px;
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+
+        .popup-content h3 {
+            color: #333;
+            font-size: 26px;
+            margin: 0 0 10px 0;
+        }
+
+        .popup-content p {
+            color: #666;
+            margin: 0 0 25px 0;
+            line-height: 1.5;
+        }
+
+        .popup-content button {
+            background: #2c1e16;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .popup-content button:hover {
+            background: #4a3326;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="order-container">
+        <div class="order-header">
+            <h2>Place Your Order</h2>
+            <p>Tell us what you're craving today!</p>
+        </div>
+
+        <form id="orderForm">
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="orderName" required>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="tel" id="orderPhone" required>
+            </div>
+
+            <div class="input-group">
+                <label>Delivery Address</label>
+                <input type="text" id="orderAddress" required>
+            </div>
+
+            <div class="input-group">
+                <label>Your Order</label>
+                <textarea id="orderItem" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Confirm Order</button>
+        </form>
+        
+        <a href="../menu/index.html" class="back-link"><i class='bx bx-arrow-back'></i> Back to Menu</a>
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <i class='bx bx-check-circle'></i>
+            <h3>Order Confirmed!</h3>
+            <p>Your delicious food is being prepared and will be on its way soon.</p>
+            <button id="closePopup">Go to Home Page</button>
+        </div>
+    </div>
+
+    <script>
+        const orderForm = document.getElementById('orderForm');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const closePopup = document.getElementById('closePopup');
+
+        orderForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            popupOverlay.classList.add('active');
+        });
+
+        closePopup.addEventListener('click', function() {
+            popupOverlay.classList.remove('active');
+            window.location.href = '../home/index.html';
+        });
+    </script>
+</body>
+</html>
